@@ -1,0 +1,211 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyMnO1M8EJEnVbZDDg5mrfph",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/guadalupequezada-collab/pytonSlava/blob/main/Unidad_2%20/Chatbot_simple\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "5pmaW6asta84"
+      },
+      "outputs": [],
+      "source": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Proyecto 1_ChatBot simple\n",
+        "Guadalupe Quezada Chico\n",
+        "Geografía. CUCSH"
+      ],
+      "metadata": {
+        "id": "oKzB4m6stoUc"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print('¡Hola! Soy un ChatBot.')\n",
+        "print('Me crearon en 2025 como parte de un ejercicio.')\n",
+        "print('¿Y tu nombre cual es?.')\n",
+        "nombre_usuario = str(input())\n",
+        "print('¡Me encanta tu nombre, ' + nombre_usuario + \"!\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "kRnsEH6ajwYI",
+        "outputId": "656fbc83-5864-4d89-e1c4-999a154c1dbb"
+      },
+      "execution_count": 1,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "¡Hola! Soy un ChatBot.\n",
+            "Me crearon en 2025 como parte de un ejercicio.\n",
+            "¿Y tu nombre cual es?.\n",
+            "Chico\n",
+            "¡Me encanta tu nombre, Chico!\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "nYCTG8LDlgrK",
+        "outputId": "f83f8c2b-3fc4-4e93-8acb-eeaa48fbf6f0"
+      },
+      "execution_count": 2,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "¿Cuál es tu nombre?\n",
+            "GChico\n",
+            "¡Hola, GChico!\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def adivinar_edad():\n",
+        "    print('Imagina un personaje humano. Debes conocer su edad. Me gustaría adivinar la edad de este personaje ficticio, ' + nombre_usuario + '.')\n",
+        "    print('Para ello, te voy a hacer tres preguntas:')\n",
+        "\n",
+        "    rem3 = int(input('¿Cuál es el residuo de la división de su edad entre 3?\\n'))\n",
+        "    rem5 = int(input('¿Cuál es el residuo de la división de su edad entre 5?\\n'))\n",
+        "    rem7 = int(input('¿Cuál es el residuo de la división de su edad entre 7?\\n'))\n",
+        "    age = (rem3 * 70 + rem5 * 21 + rem7 * 15) % 105\n",
+        "\n",
+        "    print(\"Creo que su edad es \" + str(age) + \" años. ¡Espero no haberme equivocado!\")\n",
+        "\n",
+        "adivinar_edad()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "a_IgsHTcmk6l",
+        "outputId": "22dd6890-b2cc-43ec-a361-2813d0ab588c"
+      },
+      "execution_count": 11,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Imagina un personaje humano. Debes conocer su edad. Me gustaría adivinar la edad de este personaje ficticio, Chico.\n",
+            "Para ello, te voy a hacer tres preguntas:\n",
+            "¿Cuál es el residuo de la división de su edad entre 3?\n",
+            "5\n",
+            "¿Cuál es el residuo de la división de su edad entre 5?\n",
+            "4\n",
+            "¿Cuál es el residuo de la división de su edad entre 7?\n",
+            "3\n",
+            "Creo que su edad es 59 años. ¡Espero no haberme equivocado!\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def adivinar_edad():\n",
+        "    print('Imagina un personaje humano. Debes conocer su edad. Me gustaría adivinar la edad de este personaje ficticio.')\n",
+        "    print('Para ello, te voy a hacer tres preguntas:')\n",
+        "\n",
+        "    rem3 = int(input('¿Cuál es el residuo de la división de su edad entre 3?\\n'))\n",
+        "    rem5 = int(input('¿Cuál es el residuo de la división de su edad entre 5?\\n'))\n",
+        "    rem7 = int(input('¿Cuál es el residuo de la división de su edad entre 7?\\n'))\n",
+        "    age = (rem3 * 70 + rem5 * 21 + rem7 * 15) % 105\n",
+        "\n",
+        "    print(\"Creo que su edad es \" + str(age) + \" años. ¡Espero no haberme equivocado!\")\n",
+        "\n",
+        "adivinar_edad()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "kneBjv72oQHO",
+        "outputId": "f52bdae0-736d-465b-b35a-d96bf2dd5e26"
+      },
+      "execution_count": 12,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Imagina un personaje humano. Debes conocer su edad. Me gustaría adivinar la edad de este personaje ficticio.\n",
+            "Para ello, te voy a hacer tres preguntas:\n",
+            "¿Cuál es el residuo de la división de su edad entre 3?\n",
+            "6\n",
+            "¿Cuál es el residuo de la división de su edad entre 5?\n",
+            "5\n",
+            "¿Cuál es el residuo de la división de su edad entre 7?\n",
+            "4\n",
+            "Creo que su edad es 60 años. ¡Espero no haberme equivocado!\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print('Hasta la proxima, ' + nombre_usuario + '!')"
+      ],
+      "metadata": {
+        "id": "L1nbVOAhqGpS",
+        "outputId": "5bb4202c-9c16-47ea-91cd-d41b3eafd017",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "execution_count": 13,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Hasta la proxima, Chico!\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
