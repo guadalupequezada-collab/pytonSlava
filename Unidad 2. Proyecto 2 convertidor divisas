@@ -1,0 +1,97 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyMOHeBHum9/eTrrqoC7KYjf",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/guadalupequezada-collab/pytonSlava/blob/main/Unidad%202.%20Proyecto%202%20convertidor%20divisas\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Unidad 2. Proyecto 2 convertidor de divisas\n",
+        "Guadalupe Quezada Chico\n",
+        "Geografía. cusch\n",
+        "UdG"
+      ],
+      "metadata": {
+        "id": "URcVsdUvvEZ5"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import json\n",
+        "import requests\n",
+        "\n",
+        "def currency_search(cur):\n",
+        "    r = requests.get(\"http://www.floatrates.com/daily/{}.json\".format(cur))\n",
+        "    return r.text\n",
+        "\n",
+        "exchange_file = currency_search(\"mxn\")\n",
+        "exchange_dict = json.loads(exchange_file)\n"
+      ],
+      "metadata": {
+        "id": "Zm-rbyPGwKme"
+      },
+      "execution_count": 1,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# acceder a una parte de diccionario\n",
+        "print(exchange_dict[\"eur\"])\n",
+        "\n",
+        "# imprimir us contenido en un formato más amigable\n",
+        "print(json.dumps(exchange_dict[\"eur\"], indent=4))\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "sQPuz0LGwZTp",
+        "outputId": "215f2f13-b3fd-4c9d-a1fa-85f28de93241"
+      },
+      "execution_count": 14,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "{'code': 'EUR', 'alphaCode': 'EUR', 'numericCode': '978', 'name': 'Euro', 'rate': 0.046962063053427, 'date': 'Thu, 9 Oct 2025 22:55:07 GMT', 'inverseRate': 21.293783428176}\n",
+            "{\n",
+            "    \"code\": \"EUR\",\n",
+            "    \"alphaCode\": \"EUR\",\n",
+            "    \"numericCode\": \"978\",\n",
+            "    \"name\": \"Euro\",\n",
+            "    \"rate\": 0.046962063053427,\n",
+            "    \"date\": \"Thu, 9 Oct 2025 22:55:07 GMT\",\n",
+            "    \"inverseRate\": 21.293783428176\n",
+            "}\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
